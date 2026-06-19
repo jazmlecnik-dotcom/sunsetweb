@@ -88,39 +88,39 @@
             <h1 class="titulo-presupuestos">Presupuestos</h1>
             <p class="subtitulo-presupuestos">“¿Cómo pedir presupuesto?”</p>
 
-            <form name="pedido-presupuesto" method="POST" action="/?thanks" data-netlify="true" enctype="multipart/form-data"></form>
-                
-                <div class="bloque-input-grupo">
-                    <label for="email-cliente">Tu Correo Electrónico</label>
-                    <input type="email" id="email-cliente" name="email" placeholder="ejemplo@correo.com" required>
-                </div>
+            <<!-- 1. Quitamos el </form> colgado del final de esta línea: -->
+<form name="pedido-presupuesto" method="POST" action="/?thanks" data-netlify="true" enctype="multipart/form-data">
+    
+    <div class="bloque-input-grupo">
+        <label for="email-cliente">Tu Correo Electrónico</label>
+        <input type="email" id="email-cliente" name="email" placeholder="ejemplo@correo.com" required>
+    </div>
 
-                <div class="bloque-input-grupo">
-                    <label for="idea-diseno">1. Descripción del Diseño</label>
-                    <textarea id="idea-diseno" name="descripcion_diseno" rows="4" placeholder="Contame tu idea, si lleva texto, estilo (fineline, tradicional), etc..." required></textarea>
-                </div>
+    <div class="bloque-input-grupo">
+        <label for="idea-diseno">1. Descripción del Diseño</label>
+        <textarea id="idea-diseno" name="descripcion_diseno" rows="4" placeholder="Contame tu idea, si lleva texto, estilo (fineline, tradicional), etc..." required></textarea>
+    </div>
 
-                <div class="bloque-input-grupo">
-                    <label for="foto-referencia">Adjuntar imagen de referencia (Opcional)</label>
-                    <input type="file" id="foto-referencia" name="foto_referencia" accept="image/*">
-                </div>
+    <div class="bloque-input-grupo">
+        <label for="foto-referencia">Adjuntar imagen de referencia (Opcional)</label>
+        <input type="file" id="foto-referencia" name="foto_referencia" accept="image/*">
+    </div>
 
-                <div class="bloque-input-grupo">
-                    <label for="zona-cuerpo">2. Zona del cuerpo</label>
-                    <input type="text" id="zona-cuerpo" name="zona_cuerpo" placeholder="Ej: Antebrazo, costillas, tobillo..." required>
-                </div>
+    <div class="bloque-input-grupo">
+        <label for="zona-cuerpo">2. Zona del cuerpo</label>
+        <input type="text" id="zona-cuerpo" name="zona_cuerpo" placeholder="Ej: Antebrazo, costillas, tobillo..." required>
+    </div>
 
-                <div class="bloque-input-grupo">
-                    <label for="tamano-tattoo">3. Tamaño aproximado (en cm)</label>
-                    <input type="text" id="tamano-tattoo" name="tamano" placeholder="Ej: 5x5 cm, 10 cm de alto..." required>
-                </div>
+    <div class="bloque-input-grupo">
+        <label for="tamano-tattoo">3. Tamaño aproximado (en cm)</label>
+        <input type="text" id="tamano-tattoo" name="tamano" placeholder="Ej: 5x5 cm, 10 cm de alto..." required>
+    </div>
 
-                <button type="submit" class="btn-shadow btn-enviar-presupuesto">
-                    <img src="../assets/iconos/mail-icon.png" width="20" alt="Mail" onerror="this.style.display='none'"> 
-                    Enviar Solicitud
-                </button>
-
-            </form>
+    <button type="submit" class="btn-shadow btn-enviar-presupuesto">
+        <img src="../assets/iconos/mail-icon.png" width="20" alt="Mail" onerror="this.style.display='none'"> 
+        Enviar Solicitud
+    </button>
+</form>
 
         </section>
     </main>
