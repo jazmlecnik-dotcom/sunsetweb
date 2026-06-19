@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir Presupuesto - Sunset</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* --- ESTILOS ESPECÍFICOS PARA LA PANTALLA DE PRESUPUESTOS --- */
+        .seccion-presupuestos {
+            padding: 20px;
+        }
+
+        .titulo-presupuestos {
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #444444;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subtitulo-presupuestos {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 18px;
+            color: #666666;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        /* --- ANIMACIÓN PURA EN CSS PARA LOS BLOQUES --- */
+        @keyframes aparecerForm {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bloque-input-grupo, .btn-enviar-presupuesto {
+            animation: aparecerForm 0.5s ease-out both;
+        }
+
+        /* Retrasos escalonados para que los campos aparezcan uno tras otro */
+        .bloque-input-grupo:nth-child(1) { animation-delay: 0.1s; }
+        .bloque-input-grupo:nth-child(2) { animation-delay: 0.2s; }
+        .bloque-input-grupo:nth-child(3) { animation-delay: 0.3s; }
+        .bloque-input-grupo:nth-child(4) { animation-delay: 0.4s; }
+        .bloque-input-grupo:nth-child(5) { animation-delay: 0.5s; }
+        .btn-enviar-presupuesto { animation-delay: 0.6s; }
+
+        /* Ajuste para inputs de tipo archivo (File) */
+        .bloque-input-grupo input[type="file"] {
+            padding: 8px;
+            background: #FFFFFF;
+            cursor: pointer;
+        }
+
+        /* Botón de enviar grande y centrado */
+        .btn-enviar-presupuesto {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="home-2.html" class="btn-volver">❮</a>
+        <img src="../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+        <div style="width: 24px;"></div> 
+    </header>
+
+    <main class="container-pantalla">
+        <section class="seccion-presupuestos">
+            
+            <h1 class="titulo-presupuestos">Presupuestos</h1>
+            <p class="subtitulo-presupuestos">“¿Cómo pedir presupuesto?”</p>
+
+            <form action="https://formsubmit.co/jazmlecnik@gmail.com" method="POST" enctype="multipart/form-data">
+                
+                <div class="bloque-input-grupo">
+                    <label for="email-cliente">Tu Correo Electrónico</label>
+                    <input type="email" id="email-cliente" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="bloque-input-grupo">
+                    <label for="idea-diseno">1. Descripción del Diseño</label>
+                    <textarea id="idea-diseno" name="descripcion_diseno" rows="4" placeholder="Contame tu idea, si lleva texto, estilo (fineline, tradicional), etc..." required></textarea>
+                </div>
+
+                <div class="bloque-input-grupo">
+                    <label for="foto-referencia">Adjuntar imagen de referencia (Opcional)</label>
+                    <input type="file" id="foto-referencia" name="foto_referencia" accept="image/*">
+                </div>
+
+                <div class="bloque-input-grupo">
+                    <label for="zona-cuerpo">2. Zona del cuerpo</label>
+                    <input type="text" id="zona-cuerpo" name="zona_cuerpo" placeholder="Ej: Antebrazo, costillas, tobillo..." required>
+                </div>
+
+                <div class="bloque-input-grupo">
+                    <label for="tamano-tattoo">3. Tamaño aproximado (en cm)</label>
+                    <input type="text" id="tamano-tattoo" name="tamano" placeholder="Ej: 5x5 cm, 10 cm de alto..." required>
+                </div>
+
+                <button type="submit" class="btn-shadow btn-enviar-presupuesto">
+                    <img src="../assets/iconos/mail-icon.png" width="20" alt="Mail" onerror="this.style.display='none'"> 
+                    Enviar Solicitud
+                </button>
+
+            </form>
+
+        </section>
+    </main>
+</body>
+</html>

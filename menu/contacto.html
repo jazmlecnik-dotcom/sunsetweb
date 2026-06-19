@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Sunset</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .enlace-contacto { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            background-color: var(--bg-tarjeta); 
+            padding: 18px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            color: var(--texto-oscuro); 
+            font-weight: bold; 
+            margin-bottom: 15px; 
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1); 
+        }
+        .brand-wrapper { display: flex; align-items: center; gap: 15px; }
+        .brand-wrapper img { width: 24px; height: 24px; object-fit: contain; }
+
+        .titulo-contacto {
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #444444;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* --- ESTILOS EXTRA PARA EL FORMULARIO DE MAIL --- */
+        .formulario-mail-box {
+            margin-top: 25px;
+            width: 100%;
+        }
+        .titulo-consulta {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 18px;
+            color: #444444;
+            margin-bottom: 12px;
+            text-align: left;
+            padding-left: 5px;
+        }
+        /* Ajuste fino al botón de enviar */
+        .btn-enviar-mail {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="../home-2.html" class="btn-volver">❮</a>
+        <img src="../../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+        <div style="width: 24px;"></div> 
+    </header>
+
+    <main class="container-pantalla">
+        <h1 class="titulo-contacto">Contacto</h1>
+
+        <!-- WHATSAPP -->
+        <a href="https://api.whatsapp.com/message/IM2OMFI7QBLSD1?autoload=1&app_absent=0&utm_source=ig" target="_blank" class="enlace-contacto">
+            <div class="brand-wrapper"><img src="../../assets/iconos/wpp-icon.png" alt="Wpp"><span>WHATSAPP</span></div>
+            <span>→</span>
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/sunset.tattoo_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="enlace-contacto">
+            <div class="brand-wrapper"><img src="../../assets/iconos/instagram-icon.png" alt="Ig"><span>INSTAGRAM</span></div>
+            <span>→</span>
+        </a>
+
+        <!-- TIKTOK -->
+        <a href="https://www.tiktok.com/@sunset.tattoo_" target="_blank" class="enlace-contacto">
+            <div class="brand-wrapper"><img src="../../assets/iconos/tiktok-icon.png" alt="Tk"><span>TIKTOK</span></div>
+            <span>→</span>
+        </a>
+
+        <!-- --- CASILLA DE CONSULTA POR MAIL (NUEVO FORMULARIO) --- -->
+        <form action="https://formsubmit.co/jazmlecnik@gmail.com" method="POST" class="formulario-mail-box">
+            <h2 class="titulo-consulta">Dejanos tu consulta:</h2>
+            
+            <!-- Campo para que pongan su email de contacto -->
+            <div class="bloque-input-grupo">
+                <label for="email-cliente">Tu Correo Electrónico</label>
+                <input type="email" id="email-cliente" name="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <!-- Campo para escribir el mensaje -->
+            <div class="bloque-input-grupo">
+                <label for="mensaje-cliente">Mensaje / Consulta</label>
+                <textarea id="mensaje-cliente" name="mensaje" rows="7" placeholder="Escribí tu consulta acá..." required></textarea>
+            </div>
+
+            <!-- Botón estilizado con tus clases globales -->
+            <button type="submit" class="btn-shadow btn-enviar-mail">
+                <img src="../../assets/iconos/mail-icon.png" width="20" alt="Mail" onerror="this.style.display='none'"> 
+                Enviar Consulta
+            </button>
+        </form>
+
+    </main>
+</body>
+</html>

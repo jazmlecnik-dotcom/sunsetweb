@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseños Personalizados - Sunset</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="gestion-principal.html" class="btn-volver">❮</a>
+        <img src="../../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+        <div></div>
+    </header>
+    <main class="container-pantalla">
+        <h3 class="titulo-seccion">Idea Personalizada</h3>
+        <form action="#" onsubmit="alert('Idea enviada con éxito.'); return false;">
+            <div class="bloque-input-grupo">
+                <label>Contanos tu idea en detalle</label>
+                <textarea rows="4" placeholder="Ej: Silueta minimalista de línea continua..." required></textarea>
+            </div>
+            <div class="bloque-input-grupo"><label>Tamaño aproximado (cm)</label><input type="text" placeholder="Ej: 7x7 cm" required></div>
+            <div class="bloque-input-grupo"><label>Zona del cuerpo</label><input type="text" placeholder="Ej: Antebrazo" required></div>
+            <div class="bloque-input-grupo"><label>Subir referencias</label><input type="file" accept="image/*" multiple style="border:none;"></div>
+            <div class="contenedor-botones-accion">
+                <a href="gestion-principal.html" class="btn-accion cancelar">Cancelar</a>
+                <button type="submit" class="btn-accion confirmar">Enviar Idea</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

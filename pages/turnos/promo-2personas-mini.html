@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Dúo - Sunset</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="gestion-principal.html" class="btn-volver">❮</a>
+        <img src="../../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+        <div></div>
+    </header>
+    <main class="container-pantalla">
+        <h3 class="titulo-seccion">Promo 2 Personas</h3>
+        <form action="#" onsubmit="location.href='formulario-detalle.html'; return false;">
+            
+            <div class="bloque-input-grupo">
+                <label>Distribución de los Tattoos</label>
+                <select required>
+                    <option value="">-- Elegir modalidad --</option>
+                    <option value="1">1 tatuaje para cada persona (2 Clientes)</option>
+                    <option value="2">más de un tatuaje por persona</option>
+                </select>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>Seleccionar Fecha</label>
+                <input type="date" required>
+            </div>
+
+            <div class="contenedor-botones-accion">
+                <a href="gestion-principal.html" class="btn-accion cancelar">Atrás</a>
+                <button type="submit" class="btn-accion confirmar">Siguiente</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

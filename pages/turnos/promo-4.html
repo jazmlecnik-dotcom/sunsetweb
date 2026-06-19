@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo 4 - Sunset</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="gestion-principal.html" class="btn-volver">❮</a>
+        <img src="../../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+        <div></div>
+    </header>
+    <main class="container-pantalla">
+        <h3 class="titulo-seccion">Promo 4 (Flashes Premium)</h3>
+        
+        <form action="#" onsubmit="location.href='formulario-detalle.html'; return false;">
+            <div class="bloque-input-grupo">
+                <label>Elegir Fecha disponible</label>
+                <input type="date" required>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>Horarios disponibles</label>
+                <select required>
+                    <option value="">-- Seleccionar un horario --</option>
+                    <option value="13:00">13:00 hs</option>
+                    <option value="18:00">18:00 hs</option>
+                </select>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>Seña de Reserva Obligatoria</label>
+                <p style="font-weight: bold; font-size: 18px; color: #111;">$20.000 ARS</p>
+            </div>
+
+            <div class="contenedor-botones-accion">
+                <a href="gestion-principal.html" class="btn-accion cancelar">Atrás</a>
+                <button type="submit" class="btn-accion confirmar">Siguiente</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

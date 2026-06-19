@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí & Galería - Sunset</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        /* --- ESTILOS CONTROLADOS E INVARIABLES PARA EL HEADER --- */
+        .header-sunset {
+            background-color: #827C7C !important;
+            height: 130px !important;
+            display: flex !important;
+            align-items: center !important;
+            padding: 0 40px !important;
+            position: relative !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .header-sunset .btn-volver {
+            color: #FFFFFF !important;
+            text-decoration: none !important;
+            font-size: 24px !important;
+            font-weight: bold !important;
+            position: absolute !important; 
+            left: 40px !important;         
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            z-index: 100 !important;
+        }
+
+        .header-sunset .logo-studio {
+            height: 90px !important;
+            width: auto !important;
+            position: absolute !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            object-fit: contain !important;
+            z-index: 99 !important;
+        }
+
+        /* --- ESTILOS ESPECÍFICOS PARA EL CUERPO DE LA PÁGINA --- */
+        .seccion-estudio {
+            padding: 20px;
+        }
+
+        .titulo-estudio {
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #444444;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subtitulo-estudio {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 18px;
+            color: #666666;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        /* --- ANIMACIÓN PURA EN CSS EN CASCADA --- */
+        @keyframes aparecerBloque {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bloque-presentacion, .contenedor-murales, .bloque-historia-texto, .titulo-galeria, .grilla-portfolio {
+            animation: aparecerBloque 0.6s ease-out both;
+        }
+
+        .bloque-presentacion { animation-delay: 0.1s; }
+        .contenedor-murales { animation-delay: 0.25s; }
+        .bloque-historia-texto { animation-delay: 0.4s; }
+        .titulo-galeria { animation-delay: 0.5s; }
+        .grilla-portfolio { animation-delay: 0.6s; }
+
+        /* --- TARJETA SOBRE MÍ --- */
+        .bloque-presentacion {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: var(--bg-tarjeta); 
+            border-radius: 16px;
+            padding: 25px 20px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .foto-perfil-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .foto-perfil {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .texto-presentacion h2 {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            color: #111111;
+            margin-bottom: 12px;
+        }
+
+        .texto-presentacion p, .bloque-historia-texto p {
+            font-size: 15px;
+            color: #444444;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .texto-presentacion p:last-child, .bloque-historia-texto p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- CONTENEDOR DE FILA AMPLIADO PARA MURAL Y PISO --- */
+        .contenedor-murales {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .foto-estudio {
+            width: 100%;
+            height: 340px; /* 👈 CORREGIDO: Aumentado de 220px a 340px para que no corte la foto */
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* 👈 CORREGIDO: Encuadre ideal para enfocar tu cara y fondo en pisoyo.PNG */
+        .foto-piso-enfocada {
+            object-position: center 22% !important;
+        }
+
+        /* --- BLOQUE PARA TEXTO INTERMEDIO --- */
+        .bloque-historia-texto {
+            background-color: var(--bg-tarjeta);
+            border-radius: 16px;
+            padding: 25px 20px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        /* --- GRILLA DEL PORTFOLIO --- */
+        .titulo-galeria {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666666;
+            margin-bottom: 15px;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+
+        .grilla-portfolio {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .item-tattoo {
+            width: 100%;
+            aspect-ratio: 1 / 1; 
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .item-tattoo:hover {
+            transform: scale(1.03);
+        }
+
+        .container-pantalla {
+            max-width: 800px; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .grilla-portfolio {
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 8px;
+            }
+            .foto-estudio {
+                height: 200px; /* Ajuste adaptado para pantallas muy chicas de celular */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="../home-2.html" class="btn-volver">❮</a>
+        <img src="../../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+    </header>
+
+    <main class="container-pantalla">
+        <section class="seccion-estudio">
+            
+            <h1 class="titulo-estudio">Sunset Studio</h1>
+            <p class="subtitulo-estudio">“Detrás de cada línea”</p>
+
+            <div class="bloque-presentacion">
+                <div class="foto-perfil-wrapper">
+                    <img src="../../assets/imagenes/jaz-tatuando.jpg" alt="Jaz Tatuando" class="foto-perfil">
+                </div>
+                <div class="texto-presentacion">
+                    <h2>Soy Jazmín</h2>
+                    <p>Tatuadora desde 2023, pero mi historia con el arte empezó mucho antes.</p>
+                    <p>Desde siempre sentí una conexión muy profunda con lo creativo: dibujar, observar, imaginar y transformar ideas en imágenes fue algo que me acompañó toda la vida. Esa pasión me llevó a estudiar Bellas Artes durante cuatro años, un espacio donde no solo aprendí técnicas, sino donde también fui construyendo mi mirada, mi sensibilidad y mi forma de entender el arte como un medio de expresión personal y emocional.</p>
+                </div>
+            </div>
+
+            <div class="contenedor-murales">
+                <img src="../../assets/imagenes/mural.PNG" alt="Mural del estudio" class="foto-estudio">
+                <img src="../../assets/imagenes/pisoyo.PNG" alt="Espacio Sunset" class="foto-estudio foto-piso-enfocada">
+            </div>
+
+            <div class="bloque-historia-texto">
+                <p>En medio de ese recorrido apareció el tatuaje. Primero como curiosidad, después como un interés cada vez más fuerte, hasta que ese “bichito de la tinta” terminó de instalarse en mí. Decidí formarme, hice un curso y, con mucho respeto por la práctica, pero también con miedo e incertidumbre, empecé a dar mis primeros pasos tatuando. Cada línea era un desafío, pero también una confirmación de que estaba en el camino correcto.</p>
+                <p>Mis comienzos fueron en casa. De a poco, el proyecto fue creciendo y, casi sin darme cuenta, fui transforming distintos rincones: primero mi habitación, después la oficina… cada lugar se fue adaptando a esta nueva pasión que ya no era solo un interés, sino una forma de vida. Fue un proceso tan real como gracioso, pero sobre todo muy significativo.</p>
+                <p>En 2024 di un paso enorme para mí: mudarme a un estudio en Villa Bosch. Ese cambio no solo representó crecimiento profesional, sino también un logro personal muy importante, el resultado de mucho esfuerzo, constancia y amor por lo que hago.</p>
+                <p>Hoy puedo decir que amo profundamente mi trabajo. El tatuaje, para mí, no es solo una práctica estética, es un acto de confianza y conexión. Cada persona que se acerca y decide dejar una marca en su piel me está entregando algo muy valioso, y eso lo tomo con muchísimo respeto y gratitud. Me emociona pensar que, a través de mi trabajo, puedo acompañar historias, momentos y significados que van a quedar para siempre.</p>
+                <p>Estoy profundamente agradecida con cada persona que confía en mí, que elige mi trabajo y que me permite ser parte de algo tan personal. Mi intención siempre es la misma: crear piezas únicas, sensibles y honestas, que no solo se vean bien, sino que realmente representen algo para quien las lleva.</p>
+                <p style="font-family: Georgia, serif; font-style: italic; font-weight: bold; color: #111111;">Este camino recién empieza, pero lo transito con el corazón lleno y con la certeza de que encontré en el tatuaje una forma de vida.</p>
+            </div>
+
+            <h3 class="titulo-galeria">Últimos Trabajos</h3>
+
+            <div class="grilla-portfolio">
+                <img src="../../assets/imagenes/tattoo10.jpeg" alt="Tattoo 10" class="item-tattoo">
+                <img src="../../assets/imagenes/tattoo11.jpeg" alt="Tattoo 11" class="item-tattoo">
+                <img src="../../assets/imagenes/tattoo12.jpeg" alt="Tattoo 12" class="item-tattoo">
+                <img src="../../assets/imagenes/tattoo13.jpeg" alt="Tattoo 13" class="item-tattoo">
+                <img src="../../assets/imagenes/tattoo14.jpg" alt="Tattoo 14" class="item-tattoo">
+                <img src="../../assets/imagenes/tattoo15.jpg" alt="Tattoo 15" class="item-tattoo">
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>

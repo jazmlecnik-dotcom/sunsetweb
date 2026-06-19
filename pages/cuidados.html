@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidados de tu Tattoo - Sunset</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* --- ESTILOS ESPECÍFICOS PARA LA PANTALLA DE CUIDADOS --- */
+        .seccion-cuidados {
+            padding: 20px;
+        }
+
+        .titulo-cuidados {
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #444444;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .subtitulo-cuidados {
+            font-family: Georgia, serif;
+            font-style: italic;
+            font-size: 18px;
+            color: #666666;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        /* =======================================================
+           CÓDIGO DE LA ANIMACIÓN ESCALONADA (IGUAL A PRESUPUESTOS)
+           ======================================================= */
+        @keyframes aparecerSuave {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Aplicamos la animación base a las tarjetas */
+        .tarjeta-cuidado-paso, .tarjeta-advertencia {
+            animation: aparecerSuave 0.6s ease-out both;
+        }
+
+        /* Ponemos los retrasos para que aparezcan una por una lentamente */
+        .tarjeta-cuidado-paso:nth-of-type(1) { animation-delay: 0.1s; }
+        .tarjeta-cuidado-paso:nth-of-type(2) { animation-delay: 0.3s; }
+        .tarjeta-cuidado-paso:nth-of-type(3) { animation-delay: 0.5s; }
+        .tarjeta-advertencia { animation-delay: 0.7s; }
+
+
+        /* --- ESTRUCTURA DE LAS TARJETAS --- */
+        .tarjeta-cuidado-paso {
+            background-color: #F0F0F0; 
+            border-radius: 16px;
+            padding: 25px 20px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+
+        /* Contenedor del ícono/imagen */
+        .icono-paso {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .icono-paso img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        /* Contenedor de los textos */
+        .contenido-paso {
+            flex: 1;
+        }
+
+        .tarjeta-cuidado-paso h3 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #827C7C; 
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .tarjeta-cuidado-paso h4 {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            color: #111111;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .tarjeta-cuidado-paso p {
+            font-size: 15px;
+            color: #444444;
+            line-height: 1.5;
+        }
+
+        /* Tarjeta de advertencia roja */
+        .tarjeta-advertencia {
+            background-color: #FFF3F3;
+            border: 1px solid #FFD3D3;
+            display: block; 
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta-advertencia h4 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #FF3B30; 
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta-advertencia ul {
+            padding-left: 20px;
+            color: #555555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .tarjeta-advertencia ul li {
+            margin-bottom: 6px;
+        }
+
+        .container-pantalla {
+            max-width: 800px; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="home-2.html" class="btn-volver">❮</a>
+        <img src="../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+        <div style="width: 24px;"></div> 
+    </header>
+
+    <main class="container-pantalla">
+        <section class="seccion-cuidados">
+            
+            <h1 class="titulo-cuidados">Cuidados</h1>
+            <p class="subtitulo-cuidados">“¿Cómo cuido mi tattoo?”</p>
+
+            <div class="tarjeta-cuidado-paso">
+                <div class="icono-paso">
+                    <img src="../assets/iconos/parche-icon.png" alt="Paso 1" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3022/3022194.png'">
+                </div>
+                <div class="contenido-paso">
+                    <h3>Paso 01</h3>
+                    <h4>El parche protector</h4>
+                    <p>Mantené el film plástico o parche (Saniderm) colocado por el tiempo indicado en el estudio (generalmente entre 2 y 5 días si es parche adhesivo, o unas pocas horas si es film tradicional). Este film protege tu herida abierta de bacterias externas.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-cuidado-paso">
+                <div class="icono-paso">
+                    <img src="../assets/iconos/lavado-icon.png" alt="Paso 2" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2942/2942914.png'">
+                </div>
+                <div class="contenido-paso">
+                    <h3>Paso 02</h3>
+                    <h4>El primer lavado</h4>
+                    <p>Retirá el film con cuidado usando agua tibia. Lavá el tatuaje delicadamente con tus manos utilizando **jabón neutro blanco** y agua fría. No uses esponjas ni rasques. Secá dando suaves toques con una servilleta de papel limpia.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-cuidado-paso">
+                <div class="icono-paso">
+                    <img src="../assets/iconos/crema-icon.png" alt="Paso 3" onerror="this.src='https://cdn-icons-png.flaticon.com/512/10374/10374465.png'">
+                </div>
+                <div class="contenido-paso">
+                    <h3>Paso 03</h3>
+                    <h4>La hidratación</h4>
+                    <p>A partir del segundo día, aplicá una capa **muy delgada** de crema recomendada (como crema con vitamina A o pomada específica para tatuajes) 3 veces al día. Es clave que la piel respire: si el tattoo brilla por exceso de crema, secala con un papel.</p>
+                </div>
+            </div>
+
+            <div class="tarjeta-advertencia">
+                <h4>Importante - Lo que debes evitar</h4>
+                <ul>
+                    <li><strong>No arranques las cascaritas</strong> ni te rasques; dejarás agujeros sin tinta en el diseño.</li>
+                    <li><strong>Evitá piletas, playa y sol directo</strong> durante los primeros 15 a 20 días para prevenir infecciones estrepitosas y decoloración.</li>
+                    <li>No uses ropa excesivamente ajustada que genere roce directo sobre la zona afectada.</li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>

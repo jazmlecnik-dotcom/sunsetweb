@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Tattoo - Sunset</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .indicacion-opcional {
+            font-size: 11px;
+            color: #777;
+            text-transform: none;
+            margin-left: 5px;
+        }
+        .input-file-custom {
+            border: 2px dashed #CCC !important;
+            padding: 20px !important;
+            text-align: center;
+            cursor: pointer;
+            background-color: #FFF;
+        }
+        .grupo-radio-opciones {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+        .grupo-radio-opciones label {
+            text-transform: none !important;
+            font-weight: normal !important;
+            font-size: 14px !important;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        .grupo-radio-opciones input {
+            width: auto !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-sunset">
+        <button class="btn-volver" style="background:none; border:none; cursor:pointer;" onclick="window.history.back();">←</button>
+        <img src="../../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+        <div></div>
+    </header>
+    <main class="container-pantalla">
+        <h3 class="titulo-seccion">Contame tu idea</h3>
+        
+        <form name="Formulario-Turnos-Sunset" method="POST" action="../home-2.html" data-netlify="true" enctype="multipart/form-data">
+            
+            <div class="bloque-input-grupo">
+                <label>Explicame brevemente tu idea</label>
+                <textarea name="idea_detalle" rows="4" placeholder="Ej: Dos flores fineline en el antebrazo..." required></textarea>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>¿Cuántos tatuajes serian en total?</label>
+                <input type="number" name="cantidad_tattoos" min="1" placeholder="Ej: 1" required>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>¿A color o blanco y negro?</label>
+                <div class="grupo-radio-opciones">
+                    <label><input type="radio" name="estilo_color" value="Blanco-y-Negro" required> Blanco y Negro</label>
+                    <label><input type="radio" name="estilo_color" value="A-Color"> A color</label>
+                </div>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>Tamaño aproximado <span class="indicacion-opcional">(en centímetros)</span></label>
+                <input type="text" name="tamano_cm" placeholder="Ej: 7 cm x 5 cm" required>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>Zona del cuerpo</label>
+                <input type="text" name="zona_cuerpo" placeholder="Ej: Antebrazo interno, tobillo..." required>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>Imágenes de referencia <span class="indicacion-opcional">(opcional)</span></label>
+                <input type="file" name="fotos_referencia" class="input-file-custom" accept="image/*" multiple>
+            </div>
+
+            <div class="bloque-input-grupo">
+                <label>Tu Teléfono de contacto</label>
+                <input type="tel" name="telefono_cliente" placeholder="Ej: 11 2345-6789" required>
+            </div>
+
+            <div class="contenedor-botones-accion">
+                <button type="button" class="btn-accion cancelar" onclick="window.history.back();">Atrás</button>
+                <button type="submit" class="btn-accion confirmar">Siguiente</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

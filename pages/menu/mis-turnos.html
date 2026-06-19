@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Turnos - Sunset</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        .tarjeta-turno { background-color: #FFFFFF; border-radius: 12px; padding: 20px; box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1); margin-bottom: 25px; }
+        .header-turno-card { display: flex; justify-content: space-between; border-bottom: 1px solid #EEE; padding-bottom: 10px; margin-bottom: 15px; }
+        .info-linea { margin-bottom: 8px; font-size: 14px; }
+        .info-linea span { font-weight: bold; }
+        .seccion-mis-turnos {
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* ==========================================
+           ESTILOS PARA EL MODAL DE CANCELACIÓN
+           ========================================== */
+        /* Fondo oscuro que cubre toda la pantalla */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Oscurece el fondo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Rectángulo blanco del aviso */
+        .modal-box {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-box p {
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        /* Clase activa para mostrar el modal */
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        /* Ícono de tilde verde para la confirmación */
+        .tilde-exito {
+            font-size: 50px;
+            color: #00A800;
+            margin-bottom: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="../home-2.html" class="btn-volver">❮</a>
+        <img src="../../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+    </header>
+
+    <main class="container-pantalla">
+        <section class="seccion-mis-turnos">
+            <h1 class="titulo-mis-turnos">Mis Turnos</h1>
+        </section>
+    
+        <div class="tarjeta-turno">
+            <div class="header-turno-card">
+                <span style="font-weight: bold; color: var(--texto-abonado);">● ABONADO</span>
+            </div>
+            <div class="info-linea"><span>Estilo:</span> Promo 2 - Fineline Flashes</div>
+            <div class="info-linea"><span>Fecha:</span> Viernes 24 de Julio</div>
+            <div class="info-linea"><span>Horario:</span> 16:30 hs</div>
+        </div>
+
+        <div class="contenedor-botones-accion">
+            <!-- Llama a la función que abre la advertencia -->
+            <button class="btn-accion cancelar" onclick="abrirAviso()">Cancelar Turno</button>
+        </div>
+    </main>
+
+    <!-- Ventana Emergente (Modal Overlay) -->
+    <div class="modal-overlay" id="modalCancelacion">
+        <div class="modal-box" id="contenidoModal">
+            <!-- Paso 1: Mensaje de Advertencia -->
+            <div id="pasoAdvertencia">
+                <p>Al cancelar el turno la seña no se reintegrará.</p>
+                <div class="contenedor-botones-accion" style="margin-top: 0; gap: 15px;">
+                    <button class="btn-accion cancelar" style="margin:0;" onclick="confirmarCancelacion()">Aceptar</button>
+                    <button class="btn-accion confirmar" style="margin:0; background-color: #827C7C;" onclick="cerrarAviso()">Volver</button>
+                </div>
+            </div>
+
+            <!-- Paso 2: Tilde Verde (Oculto inicialmente) -->
+            <div id="pasoConfirmado" style="display: none;">
+                <span class="tilde-exito">✔</span>
+                <p style="margin-bottom: 20px; font-weight: bold;">Turno Cancelado</p>
+                <div class="contenedor-botones-accion" style="margin-top: 0;">
+                    <button class="btn-accion confirmar" style="width: 100%;" onclick="cerrarAviso()">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTROLADORES INTERACTIVOS (JAVASCRIPT) -->
+    <script>
+        const modal = document.getElementById('modalCancelacion');
+        const pasoAdvertencia = document.getElementById('pasoAdvertencia');
+        const pasoConfirmado = document.getElementById('pasoConfirmado');
+
+        // Muestra el modal con el texto de advertencia
+        function abrirAviso() {
+            pasoAdvertencia.style.display = 'block';
+            pasoConfirmado.style.display = 'none';
+            modal.classList.add('active');
+        }
+
+        // Cierra el modal y restablece el flujo volviendo a la página de turnos
+        function cerrarAviso() {
+            modal.classList.remove('active');
+        }
+
+        // Cambia el contenido del aviso por la alerta de éxito con el tilde verde
+        function confirmarCancelacion() {
+            pasoAdvertencia.style.display = 'none';
+            pasoConfirmado.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

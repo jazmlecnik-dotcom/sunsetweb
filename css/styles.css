@@ -1,0 +1,237 @@
+/* ==========================================
+   1. RESET Y CONFIGURACIÓN BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #E2E2E2;
+    color: #333333;
+}
+
+:root {
+    --bg-header: #827C7C;
+    --bg-principal: #E2E2E2;
+    --bg-tarjeta: #F0F0F0;
+    --texto-oscuro: #111111 !important; 
+    --texto-cancelar: #FF3B30;
+    --texto-abonado: #00A800;
+}
+
+/* ==========================================
+   2. HEADER GLOBAL: IDÉNTICO PARA TODO EL SITIO
+   ========================================== */
+.header-sunset {
+    background-color: var(--bg-header);
+    height: 130px !important; /* Alto del espacio gris unificado */
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Flecha de volver alineada estrictamente a la izquierda */
+.header-sunset .btn-volver {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute; 
+    left: 40px;         
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+/* Logo estrictamente centrado en el medio exacto en todas las pantallas */
+.header-sunset .logo-studio {
+    height: 90px !important; /* Tamaño del logo unificado */
+    width: auto !important;
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+    object-fit: contain;
+    z-index: 99;
+}
+
+/* Menú hamburguesa alineado estrictamente a la derecha */
+.header-sunset .menu-hamburguesa {
+    color: #FFFFFF;
+    font-size: 32px; 
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+/* ==========================================
+   3. TARJETAS INFERIORES: RECTÁNGULOS MÁS CHICOS Y CONCENTRADOS
+   ========================================== */
+.info-cards-container { 
+    display: flex; 
+    gap: 20px; 
+    padding: 40px 40px; 
+    background-color: #827C7C; 
+}
+
+.info-card { 
+    flex: 1; 
+    background-color: #E2E2E2; 
+    border-radius: 12px; 
+    padding: 22px !important; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    min-height: 190px !important; 
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+}
+
+.info-card h3 { 
+    font-size: 33px !important; 
+    text-transform: uppercase; 
+    color: #555555 !important; 
+    font-weight: bold !important;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.info-card h4 { 
+    font-size: 30px !important; 
+    font-family: Georgia, serif; 
+    color: #111111 !important;
+    font-weight: bold !important;
+    margin: 6px 0 !important; 
+}
+
+.info-card p { 
+    font-size: 25px !important; 
+    color: #333333 !important; 
+    line-height: 1.4 !important; 
+    font-weight: normal !important;
+}
+
+.info-card .btn-leer-mas { 
+    align-self: flex-end; 
+    font-size: 27px !important; 
+    font-weight: bold !important; 
+    text-decoration: none; 
+    color: #000000 !important; 
+    margin-top: 12px !important;
+}
+
+/* ==========================================
+   4. COMPONENTES COMUNES Y PANTALLAS INTERNAS
+   ========================================== */
+.container-pantalla {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.titulo-seccion {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 1px;
+}
+
+.bloque-input-grupo {
+    background-color: var(--bg-tarjeta);
+    border-radius: 22px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bloque-input-grupo label {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #666;
+}
+
+.bloque-input-grupo select, 
+.bloque-input-grupo input, 
+.bloque-input-grupo textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    background-color: #FFF;
+    font-size: 14px;
+}
+
+.btn-shadow {
+    background-color: var(--bg-tarjeta);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--texto-oscuro);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contenedor-botones-accion {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    gap: 20px;
+}
+
+.btn-accion {
+    flex: 1;
+    padding: 15px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-accion.confirmar {
+    background-color: #827C7C;
+    color: #FFFFFF;
+}
+
+.btn-accion.cancelar {
+    background-color: #E2E2E2;
+    color: var(--texto-cancelar);
+    border: 1px solid var(--texto-cancelar);
+}
+/* ==========================================
+   5. SECCIÓN SOBRE MÍ
+   ========================================== */
+
+.about-text a {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 20px;
+    display: inline-block;
+}

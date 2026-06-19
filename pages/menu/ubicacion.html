@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación - Sunset</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <style>
+        /* --- ESTILOS ESPECÍFICOS PARA LA PANTALLA UBICACIÓN --- */
+        .seccion-ubicacion {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .titulo-ubicacion {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #444444;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        /* Contenedor del mapa con la sombra y bordes del diseño */
+        .contenedor-mapa {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .contenedor-mapa iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .texto-direccion {
+            font-size: 18px;
+            font-weight: bold;
+            color: #444444;
+            margin-bottom: 35px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* Tarjeta blanca redondeada "¿Cómo llegar?" */
+        .tarjeta-como-llegar {
+            background-color: #F0F0F0; /* Gris muy claro / blanco según tu paleta */
+            border-radius: 25px;
+            padding: 35px 20px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .tarjeta-como-llegar h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            font-style: italic;
+            font-weight: normal;
+            color: #333333;
+            margin-bottom: 25px;
+        }
+
+        .tarjeta-como-llegar p {
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .tarjeta-como-llegar p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-sunset">
+        <a href="../home-2.html" class="btn-volver">❮</a>
+        <img src="../../assets/imagenes/logo-sin-fondo-01.png" alt="Sunset" class="logo-studio">
+    </header>
+
+    <main class="container-pantalla">
+        <section class="seccion-ubicacion">
+            
+            <h1 class="titulo-ubicacion">Ubicación</h1>
+
+            <div class="contenedor-mapa">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.152431690074!2d-58.5772379!3d-34.6003058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb82bf9bf1b51%3A0x67db23668b556b63!2sJos%C3%A9%20Mar%C3%ADa%20Bosch%20703%2C%20B1682%20Villa%20Bosch%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1718670000000!5m2!1ses!2sar" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <p class="texto-direccion">José María Bosch 703, Villa Bosch</p>
+
+            <div class="tarjeta-como-llegar">
+                <h3>¿Cómo llegar?</h3>
+                <p>Colectivo 328 B (verde)</p>
+                <p>Tren Urquiza
+            <div>
+
+        </section>
+    </main>     
+</body>
+</html>
